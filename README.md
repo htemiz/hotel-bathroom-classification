@@ -24,7 +24,7 @@ Please cite the paper as follows:
 The images were downloaded from [TripAdvisor](https://www.tripadvisor.com). In total, 11,116 images were manually
 labelled as `good` or `bad`.
 
-This dataset is shared with the community with the name [HotelBath](https://zenodo.org/record/7340428) in zenodo. 
+This dataset is shared with the community with the name [HotelBath](https://zenodo.org/record/7340428) (~435MB) in zenodo. 
 
 Details of the dataset:
 
