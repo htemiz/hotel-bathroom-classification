@@ -11,13 +11,22 @@ Please cite the paper as follows:
 *Temiz, Hakan. "Automatic and Accurate Classification of Hotel Bathrooms from Images with Deep Learning.
 " International Journal of Engineering Research and Development 14.3 (2022): 211-218.* [https://doi.org/10.29137/umagd.1217004](https://doi.org/10.29137/umagd.1217004)
 
+&nbsp;
 
 ### Overview
 
 
+
+&nbsp;
+
 ### Dataset
 
-Details of dataset
+&nbsp;
+
+The images were downloaded from [TripAdvisor](https://www.tripadvisor.com). In total, 11,116 images were manually
+labelled as `good` or `bad`.
+
+Details of the dataset:
 
 ||Good|Bad|**Total**|
 |--|--|--|--|
@@ -25,11 +34,16 @@ Details of dataset
 |Test|359|196|555|
 |**Total**|7181|3935|11116|
 
+Some sample images that labelled as `good`
 ![](images/good.jpg)
 
 
+Some sample images that labelled as `bad`
 ![](images/bad.jpg)
 
+
+
+&nbsp;
 
 ### Algorithm
 
