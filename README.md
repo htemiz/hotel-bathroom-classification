@@ -25,15 +25,15 @@ Details of dataset
 |Test|359|196|555|
 |**Total**|7181|3935|11116|
 
-![](images%2Fgood.jpg)
+![](images/good.jpg)
 
 
-![](images%2Fbad.jpg)
+![](images/bad.jpg)
 
 
 ### Algorithm
 
-![](images%2Fmodel.jpg)
+![](images/model.jpg)
 
 
 
