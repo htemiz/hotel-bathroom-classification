@@ -71,8 +71,29 @@ The following metrics were used for the evaluation of the classification perform
 
 **True Negative (TN):** Values that are actually negative and predicted to be negative.
 
-**Accuracy:** The ratio of all correctly predicted positives and negatives.
+**Accuracy:** The ratio of all correctly predicted positives and negatives. It is defined as follows:
 $$\frac{TP + TN}{TP + TN + FP + FN}$$
+
+**Precision:** The ratio of the number of correctly predicted positives to all predicted positives.
+It is a measure of how many of those predicted positively are actually correct.
+$$\frac{TP}{TP + FP}$$
+
+**Recall:** The ratio of the number of correctly predicted positives to the true positives.
+It is a measure of how many of the true positives are correctly predicted. Also known as specificity.
+$$\frac{TP}{TP + TN}$$
+
+**TPR** True positive rate. It is another synonym for Recall and is defined in the same way as the Recall given above.
+
+**FPR** False positive rate. The ratio of the number of falsely predicted positives to the true negatives.
+Also called the probability of a false alarm.
+$$\frac{FP}{FP + TN}$$
+
+
+**AUC** Area under the receiver operating characteristic (ROC) curve. 
+AUC measures the entire two-dimensional ROC curve which is calculated over the ratio
+of TPR to FPR for all possible classification thresholds. 
+The closer to 1.0, the higher the classification excellence.
+
 
 
 &nbsp;
