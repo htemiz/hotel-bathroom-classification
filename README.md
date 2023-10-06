@@ -55,10 +55,7 @@ Some sample images that labelled as `bad`
 
 
 
-
 ### Training
-
-
 
 
 
