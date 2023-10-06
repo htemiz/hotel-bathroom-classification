@@ -13,13 +13,13 @@ Please cite the paper as follows:
 
 &nbsp;
 
-### Overview
+## Overview
 
 
 
 &nbsp;
 
-### Dataset
+## Dataset
 
 The images were downloaded from [TripAdvisor](https://www.tripadvisor.com). In total, 11,116 images were manually
 labelled as `good` or `bad`. 10,561 images were separated for training, and 555 images for testing.
@@ -87,7 +87,6 @@ $$\frac{TP}{TP + TN}$$
 **FPR** False positive rate. The ratio of the number of falsely predicted positives to the true negatives.
 Also called the probability of a false alarm.
 $$\frac{FP}{FP + TN}$$
-
 
 **AUC** Area under the receiver operating characteristic (ROC) curve. 
 AUC measures the entire two-dimensional ROC curve which is calculated over the ratio
