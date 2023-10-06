@@ -61,6 +61,8 @@ Some sample images that labelled as `bad`
 
 ### Evaluation
 
+The following metrics were used for the evaluation of the classification performance:
+
 **True Positive (TP):** Values that are actually positive and predicted positive.
 
 **False Positive (FP):** Values that are actually negative but predicted to be positive.
