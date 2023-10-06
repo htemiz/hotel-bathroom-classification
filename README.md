@@ -56,10 +56,24 @@ Some sample images that labelled as `bad`
 
 
 
+### Training
 
 
 
 
 
+### Evaluation
+
+**True Positive (TP):** Values that are actually positive and predicted positive.
+**False Positive (FP):** Values that are actually negative but predicted to be positive.
+**False Negative (FN):** Values that are actually positive but predicted to be negative.
+**True Negative (TN):** Values that are actually negative and predicted to be negative.
+**Accuracy:** The ratio of all correctly predicted positives and negatives.
+$${TP + TN}_{TP + TN + FP + FN}$$
+
+
+&nbsp;
+
+Please feel free to contact me at [htemiz@artvin.edu.tr](mailto:htemiz@artvin.edu.tr) for any further information.
 
 
