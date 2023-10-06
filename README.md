@@ -48,18 +48,18 @@ Some sample images that labelled as `bad`
 
 &nbsp;
 
-### Algorithm
+## Algorithm
 
 ![](images/model.jpg)
 
 
 
 
-### Training
+## Training
 
 
 
-### Evaluation
+## Evaluation
 
 The following metrics were used for the evaluation of the classification performance:
 
