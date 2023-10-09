@@ -64,7 +64,10 @@ block, Direct Upsampling and Feature Upsampling  layers are removed.
 ![](images/model.jpg)
 
 
+## How to Run
 
+
+```python.exe run.py```
 
 ## Training
 

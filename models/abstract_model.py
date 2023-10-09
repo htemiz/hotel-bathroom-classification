@@ -173,8 +173,6 @@ class model(object):
         with open(join(self.output_folder, self.name + '_history.csv'), mode='w') as f:
             self.hist_df.to_csv(f)
 
-        # np.save(join(self.output_folder, self.name + '_history.npy'), self.history.history)
-
 
         return self.history, elapsed_time
 
@@ -195,8 +193,6 @@ class model(object):
                 batch_size=1,
             )
 
-        # her tensorflow dataset içindeki imge ve etiketler
-        # indeks, etiket şeklinde bulunur. dolayısı ile ,y etiketi verir.
         return np.concatenate([y for x, y in ds], axis=0)
 
 

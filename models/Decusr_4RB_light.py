@@ -1,14 +1,29 @@
 ﻿"""
-Light version (DECUSR-L) of DECUSR model with 4 Repeating Blocks. This is a DeepSR file.
+
+Light version (DECUSR-L) of DECUSR model with 4 Repeating Blocks.
 In this light version, feature extraction block, Direct Upsampling and Feature Upsampling  layers are removed.
 
-To run this model, e.g., training:
+This code is run via run.py file.
 
---python.exe -m DeepSR.DeepSR --modelfile Decusr_4RB_light.py --train
+The algorithm is trained and evaluated via run.py for all combinations of several hyper-parameters.
 
-Please refer to the documentation of DeepSR from the following address for other command instructions and setting:
-    https://github.com/htemiz/DeepSR
+To run this algorithm, make sure that this module is imported in run.py with
+Uncommenting the following code in run.py (line 33 in run.py) like this:
+    import_module('Decusr_4RB_light')
+
+and make the following code (line 34 in run.py) Commented Line like this:
+    # import_module('Decusr_4RB')
+
+and then issue:
+    --python.exe run.py
+
+Hyper parameters of the model are defined in the class named 'model' residing in abstract_model.py file.
+The 'model' class performs all works, e.g., training, test, evaluation, plot, etc.
+
+Please refer to abstract_model.py for further information.
+
 """
+
 
 from tensorflow.keras import metrics
 from tensorflow.keras import losses, Sequential
@@ -22,63 +37,6 @@ from os.path import  dirname, abspath, basename
 from tensorflow.keras.optimizers import Adam, SGD, RMSprop
 import abstract_model
 
-
-eps = 1.1e-6
-
-settings = \
-{
-'activation': 'relu',
-'augment':[], # must be any or all lof [90,180,270, 'flipud', 'fliplr', 'flipudlr' ]
-'backend': 'tensorflow',
-'batchsize':2,
-'channels':1,
-'colormode':'RGB', # 'YCbCr' or 'RGB'
-'crop': 0,
-'crop_test': 6,
-'decay':1e-6,
-'decimation': 'bicubic',
-'epatience' : 201,
-'epoch':50,
-'inputsize':16, #
-'interp_compare': 'lanczos',
-'interp_up': 'bicubic',
-'lrate':1e-3,
-'lrpatience': 50,
-'lrfactor' : 0.5,
-'metrics': ["PSNR"],
-'minimumlrate' : 1e-7,
-'modelname':basename(__file__).split('.')[0],
-'noise':'',
-'normalization':['divide', '255.0'], # ['standard', "53.28741141", "40.73203139"],
-'normalizeback': False,
-'normalizeground':False,
-'outputdir':'',
-'scale':2,
-'seed': 19,
-'shuffle' : True,
-'stride':5, #
-'target_channels': 1,
-'target_cmode' : 'RGB',
-'testpath' : [r'D:\working\hotelbath\test'], # change accordingly for your environment
-'traindir': r"D:\working\hotelbath\train", # change accordingly for your environment
-'upscaleimage': False,
-'valdir': r'D:\working\hotelbath\val' , # change accordingly for your environment
-'weightpath':'',
-'workingdir': '',
-}
-
-
-if settings['scale'] == 3:
-    settings['inputsize']= 11
-    settings['stride'] = 4
-
-elif settings['scale'] == 4:
-    settings['inputsize']= 8
-    settings['stride'] = 3
-
-elif settings['scale'] == 8:
-    settings['inputsize']= 4
-    settings['stride'] = 1
 
 normalize_batch = False
 
