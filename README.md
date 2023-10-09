@@ -28,7 +28,7 @@ labelled as `good` or `bad`. 10,561 images were separated for training, and 555 
 6822 and 3739 were reserved for the training, and 359 and 196 were reserved for testing, respectively.
 
 This dataset is shared with the community with the name [HotelBath](https://zenodo.org/record/7340428) 
-[![HotelBathDOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7340428.svg)](https://doi.org/10.5281/zenodo.7340428)
+[![HotelBath](https://zenodo.org/badge/DOI/10.5281/zenodo.7340428.svg)](https://doi.org/10.5281/zenodo.7340428)
 (~435MB) in zenodo. 
 
 Details of the dataset:
