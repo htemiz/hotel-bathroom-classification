@@ -106,7 +106,7 @@ class My_Model(abstract_model.model):
         upsampler_LC = UpSampling2D(settings['scale'], name='upsampler_locally_connected')(feature_extraction)
         upsampler_direct = UpSampling2D(settings['scale'])(main_input)
 
-        # YİNELEMELİ BLOKLAR
+        # REPEATING BLOCKS #
 
         if self.max_pooling:
             RB1 = concatenate([
@@ -115,7 +115,6 @@ class My_Model(abstract_model.model):
                                ])
         else:
             RB1 = concatenate([upsampler_LC, upsampler_direct])
-        # RB1 = BatchNormalization(epsilon=eps)(RB1)
         RB1 = Conv2D(16, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(RB1)
         RB1 = Conv2D(16, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(RB1)
         RB1 = Conv2D(16, (1, 1), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(RB1)
@@ -197,7 +196,6 @@ class My_Model(abstract_model.model):
         )
 
         model.summary()
-        # model.compile(Adam(self.lrate, self.decay), loss=losses.mean_squared_error)
 
         return model
 

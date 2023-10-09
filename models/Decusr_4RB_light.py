@@ -1,5 +1,6 @@
 ﻿"""
-Light version of DECUSR model (DECUSR-L) with 4 Repeating Blocks. This is a DeepSR file.
+Light version (DECUSR-L) of DECUSR model with 4 Repeating Blocks. This is a DeepSR file.
+In this light version, feature extraction block, Direct Upsampling and Feature Upsampling  layers are removed.
 
 To run this model, e.g., training:
 
@@ -55,7 +56,7 @@ settings = \
 'scale':2,
 'seed': 19,
 'shuffle' : True,
-'stride':5, # adımın 72 nin 1/3 ü olmasını istiyoruz. yani 24. 4 ölçek için 6 adım çıkışta 24 eder.
+'stride':5, #
 'target_channels': 1,
 'target_cmode' : 'RGB',
 'testpath' : [r'D:\working\hotelbath\test'], # change accordingly for your environment

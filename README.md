@@ -58,7 +58,7 @@ layer is added on the top of the algorithm to adap the model for classification 
 is a type of binary classification, Sigmoid activation is used in this layer.
 
 DECUSR-L is a some sort of light version of originial DECUSR model. In this light version, feature extraction
-block, Direct Upsampling and Feature Upsampling  layers are removed. The rest of 
+block, Direct Upsampling and Feature Upsampling  layers are removed. 
 
 
 ![](images/model.jpg)
