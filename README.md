@@ -50,7 +50,15 @@ Some sample images that labelled as `bad`
 
 &nbsp;
 
-## Algorithm
+## Algorithms
+In order to classify hotel bathrroms, two deep convolutional network was used: DECUSR and DECUSR-L.
+DECUSR is originially designed to super-resolve 1-channel ultrasound B-mode images. A Dense (fully connected)
+layer is added on the top of the algorithm to adap the model for classification problem. Since, the problem
+is a type of binary classification, Sigmoid activation is used in this layer.
+
+DECUSR-L is a some sort of light version of originial DECUSR model. In this light version, feature extraction
+block, Direct Upsampling and Feature Upsampling  layers are removed. The rest of 
+
 
 ![](images/model.jpg)
 
