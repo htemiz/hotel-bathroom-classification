@@ -53,7 +53,7 @@ Some sample images that labelled as `"bad"`
 &nbsp;
 
 ## Algorithms
-In order to classify hotel bathroms, two deep convolutional network was used: DECUSR and DECUSR-L.
+In order to classify hotel bathrooms, two deep convolutional network was used: DECUSR and DECUSR-L.
 DECUSR is originally designed to super-resolve 1-channel (grayscale) ultrasound B-mode images. A Dense (fully connected)
 layer is added on the top of the algorithm to adapt the model for classification problem. Since the problem
 is a type of binary classification, Sigmoid activation is used in this layer.
@@ -67,12 +67,38 @@ block, Direct Upsampling and Feature Upsampling  layers are removed.
 
 ## How to Run
 Entire program reside in `"models"` folder. Both algorithms are run via `run.py` file. This module imports either
-of the model which are the derived class from the class `model` defined in in `abstract_model`.py file.
+of the model which are the derived class from the class `My_Model` defined in `abstract_model`.py file.
 
 To run the experiment, issue the following command in command prompt 
 after making sure the desired model (DECUSR or DECUSR-L) is imported in `run.py`  
 
 ```python.exe run.py```
+
+Should you need to use the models, the weights ensuring the highest performance for each one are located in
+the `weights` folder. 
+
+```python
+from importlib import import_module
+
+Module = import_module('Decusr_4RB_light') # provide full path in case module is not in the same folder
+DECUSR_L = Module.My_Model(name='temp', training_path=folder_train, test_path=test_path)
+
+DECUSR_L.model.load_weights('weights/Decusr_4RB_light.h5') # model is stored in the class as a member with name of 'model' 
+
+DECUSR_L.model.predict(test_ds,)
+...
+```
+The class `My_Model` provides many functions for several operations such as training, test, prediction, plotting, 
+calculation of many metrics, ROC curves, Precision-Recall curves, etc. Please refer to the class for further details.
+
+In addition, the `__get_model__` member method of the class can also be used to get the model itself.
+
+```python
+decusr_l_model = DECUSR_L.__get_model(mode='test') # mode=test for testing (prediction)
+decusr_l_model.load_weights('weights/Decusr_4RB_light.h5') # load pre-trained weights
+model.predict(test_data) # do prediction for some test_data
+```
+
 
 ## Training
 
@@ -94,6 +120,16 @@ Finally, DECUSR-L ensured the highest score (92.4% Accuracy) with the following 
 - Image Size: 512x512 pixels
 - MaxPooling: Applied
 - Batch Normalization: Not Applied
+
+
+The optimal hyper-parameter setting for DECUSR (88.5% Accuracy) with the following settings:
+
+- Optimizer: RMSProp
+- Learning Rate: 1E-3
+- Image Size: 256x256 pixels
+- MaxPooling: Applied
+- Batch Normalization: Applied
+
 
 Entire experiment is illustrated in the figure below:
 
