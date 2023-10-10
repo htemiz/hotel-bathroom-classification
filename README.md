@@ -56,7 +56,7 @@ Some sample images that labelled as `"bad"`
 In order to classify hotel bathrooms, two deep convolutional network was used: DECUSR and DECUSR-L.
 DECUSR is originally designed to super-resolve 1-channel (grayscale) ultrasound B-mode images. A Dense (fully connected)
 layer is added on the top of the algorithm to adapt the model for classification problem. Since the problem
-is a type of binary classification, Sigmoid activation is used in this layer.
+is a type of binary classification, Sigmoid activation is used in this layer. The algorithms are implemented with `Keras`
 
 DECUSR-L is a some sort of light version of originial DECUSR model. In this light version, feature extraction
 block, Direct Upsampling and Feature Upsampling  layers are removed. 
