@@ -97,7 +97,7 @@ Finally, DECUSR-L ensured the highest score (92.4% Accuracy) with the following 
 
 Entire experiment is illustrated in the figure below:
 
-![search_for_best.jpg](images/search_for_best.jpg)
+![](images/search_for_best.jpg)
 
 
 ## Evaluation
