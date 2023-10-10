@@ -25,10 +25,11 @@ Please cite the paper as follows:
 The images were downloaded from [TripAdvisor](https://www.tripadvisor.com). In total, 11,116 images were manually
 labelled as `good` or `bad`. 10,561 images were separated for training, and 555 images for testing.
 
-7181 bathroom images were classified as good and 3935 images as bad. Of the good and bad images,
-6822 and 3739 were reserved for training, and 359 and 196 were reserved for testing, respectively.
+7181 bathroom images were labelled as good and 3935 images as bad. Of the images labelled "good", 6822 were reserved 
+for training and 359 for testing. Similarly, Of the "bad" images, 3739 were reserved for training and 196 for testing.
 
-This dataset is shared with the community with the name [HotelBath](https://zenodo.org/record/7340428) in Zenodo
+
+This dataset, so-called [HotelBath](https://zenodo.org/record/7340428), is shared with in Zenodo
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7340428.svg)](https://doi.org/10.5281/zenodo.7340428)
 (~435MB). 
 
