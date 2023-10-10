@@ -1,27 +1,3 @@
-"""
-https://machinelearningmastery.com/threshold-moving-for-imbalanced-classification/
-
-https://towardsdatascience.com/building-interpretable-models-on-imbalanced-data-a6ea5ae89bc6
-https://statistics.berkeley.edu/sites/default/files/tech-reports/666.pdf
-
-Training Cost-sensitive Neural Networks With Methods Addressing The Class Imbalance Problem
-    https://ieeexplore.ieee.org/document/1549828
-
-https://www.aaai.org/Library/Workshops/2000/ws00-05-001.php
-
-https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/
-
-best threshold
-    https://machinelearningmastery.com/threshold-moving-for-imbalanced-classification/
-
-https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/
-
-https://machinelearningmastery.com/one-vs-rest-and-one-vs-one-for-multi-class-classification/
-
-https://scikit-learn.org/stable/modules/multiclass.html
-
-"""
-
 from pandas import DataFrame
 from os.path import join, exists
 from os import makedirs, listdir
@@ -42,37 +18,13 @@ from sklearn.preprocessing import label_binarize
 import seaborn as sns
 from matplotlib import pyplot as plt
 
-import locale
 
-
-locale.setlocale(locale.LC_ALL, 'tr_TR')
-
-#
-#
-# dahası için buraya bak:
-# https://scikit-learn.org/stable/modules/model_evaluation.html#multiclass-and-multilabel-classification
-# https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics
-#
-#
-# precision ve recall'da, micro ve macro için şuna bak:
-# http://rushdishams.blogspot.com/2011/08/micro-and-macro-average-of-precision.html
-# https://datascience.stackexchange.com/questions/15989/micro-average-vs-macro-average-performance-in-a-multiclass-classification-settin
-# https://www.cse.iitk.ac.in/users/purushot/papers/macrof1.pdf
-# Speech and Language Processing: https://web.stanford.edu/~jurafsky/slp3/ed3book.pdf#page=76
-#
-#
 
 
 def plot_confusion_matrix(cm, title=None, on_screen=True, plot=True, save=False, labels=None, dpi=400):
     """
     https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics
 
-    :param cm: Confusion matrix
-    :param title: Şeklin başlığı
-    :param print: True, False. Default True. Ekrana yazdırma ayarı
-    :param show: True, False. Default True. Grafiği çizdirme ayarı
-    :param save: True, False. Default False. Grafiği dosyaya kaydetme ayarı.
-    :return: Figure ve ax nesnesi
     """
     if title is None:
         title = 'Confusion Matrix'
