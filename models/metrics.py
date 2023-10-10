@@ -134,7 +134,7 @@ def roc_macro(fpr, tpr, roc_auc, n_classes=5 ):
     # Then interpolate all ROC curves at this points
     mean_tpr = np.zeros_like(all_fpr)
     for i in reversed(range(n_classes)):
-        mean_tpr += np.interp(all_fpr, fpr[i], tpr[i])  # Dikkat: nan değerler için toplam sonucu nan oluyor.
+        mean_tpr += np.interp(all_fpr, fpr[i], tpr[i])  #
 
     # Finally average it and compute AUC
     mean_tpr /= n_classes
@@ -163,11 +163,11 @@ def roc_micro(y_test, y_score, n_classes=5):
     roc_auc = dict()
     pos_labels = dict()
 
-    # ndim=1 ise, etiketler tek boyutlu verilmiş demektir.
+    # ndim=1, labels 1-d array
     if y_test.ndim ==1 and n_classes >2:
         y_test= label_binarize(y_test, classes=np.arange(n_classes))
 
-    # ndim=1 ise, etiketler tek boyutlu verilmiş demektir.
+    # ndim=1, labels 1-d array
     if y_score.ndim ==1 and n_classes >2:
         y_score= label_binarize(y_score, classes=np.arange(n_classes))
 
