@@ -16,7 +16,17 @@ Please cite the paper as follows:
 
 ## Overview
 
+Hotel bathrooms are one of the most important places in terms of customer satisfaction, 
+and where the most complaints are reported. To share their experiences, guests rate hotels, 
+comment, and share images of their positive or negative ratings. An important part of the room images
+shared by guests is related to bathrooms. Guests tend to prove their satisfaction or dissatisfaction
+with the bathrooms with images in their comments. These Positive or negative comments and 
+potentially affect the prospective guests. In this study, two different versions of a deep learning 
+algorithm were designed to classify hotel bathrooms as satisfactory (good) or unsatisfactory
+(bad, when any defects such as dirtiness, deficiencies, malfunctions were present) by analyzing images.
 
+The results revealed that the designed model(s) is very successful in automatically detecting situations
+that may cause problematic or negative interpretations from the images.
 
 &nbsp;
 
