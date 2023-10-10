@@ -94,7 +94,7 @@ calculation of many metrics, ROC curves, Precision-Recall curves, etc. Please re
 In addition, the `__get_model__` member method of the class can also be used to get the model itself.
 
 ```python
-decusr_l_model = DECUSR_L.__get_model(mode='test') # mode=test for testing (prediction)
+decusr_l_model = DECUSR_L.__get_model__(mode='test') # mode=test for testing (prediction)
 decusr_l_model.load_weights('weights/Decusr_4RB_light.h5') # load pre-trained weights
 model.predict(test_data) # do prediction for some test_data
 ```
