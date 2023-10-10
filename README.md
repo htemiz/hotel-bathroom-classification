@@ -134,7 +134,9 @@ AUC measures the entire two-dimensional ROC curve which is calculated over the r
 of TPR to FPR for all possible classification thresholds. 
 The closer to 1.0, the higher the classification excellence.
 
+Entire results are given below:
 
+![](images/results.jpg)
 
 &nbsp;
 
