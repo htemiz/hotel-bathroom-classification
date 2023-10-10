@@ -25,8 +25,8 @@ Please cite the paper as follows:
 The images were downloaded from [TripAdvisor](https://www.tripadvisor.com). In total, 11,116 images were manually
 labelled as `"good"` or `"bad"`. 10,561 images were separated for training, and 555 images for testing.
 
-7181 bathroom images were labelled as `"good"` and 3935 images as bad. Of the images labelled `"good"`, 6822 were reserved 
-for training and 359 for testing. Similarly, Of the `"bad"` images, 3739 were reserved for training and 196 for testing.
+7181 bathroom images were labelled as `"good"` and 3935 images as `"bad"`. Of the images labelled `"good"`, 6822 were reserved 
+for training and 359 for testing. Similarly, of the `"bad"` images, 3739 were reserved for training and 196 for testing.
 
 
 This dataset, so-called [HotelBath](https://zenodo.org/record/7340428), is shared with in Zenodo
@@ -41,11 +41,11 @@ Details of the dataset:
 |Test|359|196|555|
 |**Total**|7181|3935|11116|
 
-Some sample images that labelled as `good`
+Some sample images that labelled as `"good"`
 ![](images/good.jpg)
 
 
-Some sample images that labelled as `bad`
+Some sample images that labelled as `"bad"`
 ![](images/bad.jpg)
 
 
@@ -53,9 +53,9 @@ Some sample images that labelled as `bad`
 &nbsp;
 
 ## Algorithms
-In order to classify hotel bathrroms, two deep convolutional network was used: DECUSR and DECUSR-L.
+In order to classify hotel bathroms, two deep convolutional network was used: DECUSR and DECUSR-L.
 DECUSR is originally designed to super-resolve 1-channel (grayscale) ultrasound B-mode images. A Dense (fully connected)
-layer is added on the top of the algorithm to adap the model for classification problem. Since, the problem
+layer is added on the top of the algorithm to adapt the model for classification problem. Since the problem
 is a type of binary classification, Sigmoid activation is used in this layer.
 
 DECUSR-L is a some sort of light version of originial DECUSR model. In this light version, feature extraction
@@ -66,12 +66,38 @@ block, Direct Upsampling and Feature Upsampling  layers are removed.
 
 
 ## How to Run
+Entire program reside in `"models"` folder. Both algorithms are run via `run.py` file. This module imports either
+of the model which are the derived class from the class `model` defined in in `abstract_model`.py file.
 
+To run the experiment, issue the following command in command prompt 
+after making sure the desired model (DECUSR or DECUSR-L) is imported in `run.py`  
 
 ```python.exe run.py```
 
 ## Training
 
+The optimal hyper-parameter set ensuring the highest performance for each model
+was found through a two-phased process. In the first stage,all combinations 
+of several hyper parameters with several values were examined to find the best-two hyper-parameter set.
+In search process the following alternatives were examined: three different optimizer, six activation function,
+two learning rate, and whether the Max Pooling and Batch Normalization were applied or not.
+
+The input image size was taken 256x256 pixels in the search process. 
+
+In the second stage, each model was re-trained with the top two hyper-parameter sets for other images sizes:
+128x128, 512x512 and 1024x1024 pixels.
+
+Finally, DECUSR-L ensured the highest score (92.4% Accuracy) with the following settings:
+
+- Optimizer: RMSProp
+- Learning Rate: 1E-3
+- Image Size: 512x512 pixels
+- MaxPooling: Applied
+- Batch Normalization: Not Applied
+
+Entire experiment is illustrated in the figure below:
+
+![search_for_best.jpg](images/search_for_best.jpg)
 
 
 ## Evaluation
